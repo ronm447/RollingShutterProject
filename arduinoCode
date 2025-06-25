@@ -1,0 +1,14 @@
+const int squareWavePin = 9;  // הפין שמוציא את הגל
+const unsigned int frequency = 1000; // תדר הגל (הרץ)
+const unsigned long halfPeriodMicros = 1000000 / (2 * frequency); // זמן חצי מחזור במיקרו־שניות
+
+void setup() {
+  pinMode(squareWavePin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(squareWavePin, HIGH);
+  delayMicroseconds(halfPeriodMicros);
+  digitalWrite(squareWavePin, LOW);
+  delayMicroseconds(halfPeriodMicros);
+}
